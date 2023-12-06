@@ -10,9 +10,21 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
-    setMovies(data.Search);
+    try {
+      const response = await fetch(`${API_URL}&s=${title}`, { method: 'GET', mode: 'cors' });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch movies: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      
+      // Check if data.Search is available before setting the state
+      setMovies(data.Search || []);
+    } catch (error) {
+      console.error('Error fetching movies:', error.message);
+      // Handle the error, e.g., set an error state or display an error message
+    }
   };
 
   const handleKeyPress = (e) => {
