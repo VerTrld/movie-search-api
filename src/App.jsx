@@ -39,7 +39,7 @@ const App = () => {
 
   return (
     <div className="app">
-     <a href="https://vertrld.github.io/movie-search-api/"><h1>Cinéma Scope</h1></a> 
+      <h1>Cinéma Scope</h1>
 
       <div className="search">
         <input
