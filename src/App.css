@@ -201,17 +201,16 @@ h1 {
     font-size: 1rem;
   }
 
-  .search img {
-    width: 20px;
-    height: 20px;
-  }
+    .search img {
+      width: 20px;
+      height: 20px;
+    }
 }
 
 @media screen and (max-width: 400px) {
   .app {
     padding: 0;
-    min-height: 100vh;
-   
+
   }
 
   h1 {
